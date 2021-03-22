@@ -1,0 +1,68 @@
+.body {
+  font-family: monospace;
+}
+
+#background {
+  position: fixed;
+  top: 0;
+  z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  #background {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  #background {
+    width: auto;
+    height: 100%;
+  }
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.outline {
+  background: #bfd4c3;
+  border: 4px solid #bed3c3;
+  border-radius: 30px;
+  margin: 0 auto;
+  opacity: 0.5;
+  padding: 10px 40px;
+}
+
+.current-weather {
+  font-size: 120px;
+}
+
+.changing-message {
+  font-size: 25px;
+  padding: 20px;
+}
+
+.city-name {
+  font-weight: bold;
+  font-size: 50px;
+  padding-top: 20px;
+}
+.current-info {
+  font-size: 25px;
+  padding-bottom: 60px;
+}
+
+.card-text {
+  font-weight: bold;
+  text-align: center;
+}
+
+.weather-icons {
+  font-size: 40px;
+}
+
+.city-search {
+  font-size: 20px;
+}
