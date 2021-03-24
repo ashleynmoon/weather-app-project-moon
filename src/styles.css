@@ -26,7 +26,7 @@
   margin-top: 50px;
 }
 
-.outline {
+.weather-description {
   background: #bfd4c3;
   border: 4px solid #bed3c3;
   border-radius: 30px;
@@ -52,6 +52,9 @@
 .current-info {
   font-size: 25px;
   padding-bottom: 60px;
+}
+.forcast {
+  width: 100%;
 }
 
 .card-text {

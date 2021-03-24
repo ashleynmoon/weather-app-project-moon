@@ -27,8 +27,9 @@
       src="media/rain.mp4"
       type="video/mp4"
     ></video>
-    <div class="container">
-      <div class="outline">
+
+    <div class="container-lg">
+      <div class="weather-description">
         <div class="row">
           <div class="col-5 text-start">
             <i class="fas fa-cloud-sun-rain current-weather"></i>
@@ -47,8 +48,12 @@
               >ºC)
             </div>
           </div>
-          <div class="row justify-content-evenly position-relative">
-            <div class="col">
+
+          <div
+            class="row justify-content-evenly position-relative"
+            id="forecast"
+          >
+            <div class="col-lg">
               <div class="card">
                 <div class="card-body">
                   <p class="card-text">
@@ -61,7 +66,8 @@
                 </div>
               </div>
             </div>
-            <div class="col">
+
+            <div class="col-lg">
               <div class="card">
                 <div class="card-body">
                   <p class="card-text">
@@ -74,7 +80,8 @@
                 </div>
               </div>
             </div>
-            <div class="col">
+
+            <div class="col-lg">
               <div class="card">
                 <div class="card-body">
                   <p class="card-text">
@@ -87,7 +94,8 @@
                 </div>
               </div>
             </div>
-            <div class="col">
+
+            <div class="col-lg">
               <div class="card">
                 <div class="card-body">
                   <p class="card-text">
@@ -100,7 +108,8 @@
                 </div>
               </div>
             </div>
-            <div class="col">
+
+            <div class="col-lg">
               <div class="card">
                 <div class="card-body">
                   <p class="card-text">
@@ -116,6 +125,7 @@
           </div>
         </div>
       </div>
+
       <div class="justify-content-md-center">
         <form class="row pt-4">
           <div class="col text-end city-search">Weather in</div>
