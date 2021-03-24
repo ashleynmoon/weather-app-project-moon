@@ -23,7 +23,7 @@
 }
 
 .container {
-  margin-top: 50px;
+  margin-top: 60px;
 }
 
 .weather-description {
@@ -53,8 +53,9 @@
   font-size: 25px;
   padding-bottom: 60px;
 }
-.forcast {
-  width: 100%;
+.row {
+  margin-right: 0;
+  margin-left: 0;
 }
 
 .card-text {
