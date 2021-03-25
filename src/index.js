@@ -15,7 +15,6 @@ function showTemperatureF(response) {
   let temperatureF = Math.round(response.data.main.temp);
   tempF.innerHTML = `${temperatureF}`;
 }
-
 function showTemperatureC(response) {
   let temperatureC = Math.round(response.data.main.temp);
   tempC.innerHTML = `${temperatureC}`;
@@ -51,10 +50,8 @@ cityUpdate.addEventListener("click", searchCity);
 
 //Current Time
 let now = new Date();
-
 let date = now.getDate();
 let year = now.getFullYear();
-
 let days = [
   "Sunday",
   "Monday",
@@ -65,7 +62,6 @@ let days = [
   "Saturday"
 ];
 let day = days[now.getDay()];
-
 let months = [
   "January",
   "February",
@@ -81,12 +77,9 @@ let months = [
   "December"
 ];
 let month = months[now.getMonth()];
-
 let hour = now.getHours();
 let minute = now.getMinutes();
-
 let currently = `${day}, ${month} ${date}, ${year} (${hour}:${minute})`;
 console.log(currently);
-
 let newCurrently = document.querySelector("#dateAndTime");
 newCurrently.innerHTML = `${currently}`;

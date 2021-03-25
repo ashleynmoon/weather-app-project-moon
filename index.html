@@ -35,7 +35,16 @@
             <i class="fas fa-cloud-sun-rain current-weather"></i>
           </div>
           <div class="col-7 text-end changing-message">
-            Be sure to bring your umbrella <i class="fas fa-umbrella"></i>
+            Be sure to bring your umbrella <i class="fas fa-umbrella"></i><br />
+            <span id="weather-info">
+              Precipitation:
+              <br />
+              Humidity:
+              <br />
+              Wind:
+              <br />
+              Feels Like:
+            </span>
           </div>
           <div class="city-name">
             <div class="col text-center" id="currentCity">Detroit, MI</div>
@@ -125,7 +134,6 @@
           </div>
         </div>
       </div>
-
       <div class="justify-content-md-center">
         <form class="row pt-4">
           <div class="col text-end city-search">Weather in</div>
@@ -137,7 +145,7 @@
               placeholder="Enter City"
             />
           </div>
-          <div class="col">
+          <div class="col-sm">
             <button type="submit" class="btn btn-secondary" id="search-city">
               Submit
             </button>
