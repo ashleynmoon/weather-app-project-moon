@@ -23,7 +23,7 @@
 }
 
 .container {
-  margin-top: 60px;
+  margin-top: 80px;
 }
 
 .weather-description {
@@ -41,17 +41,17 @@
 
 .changing-message {
   font-size: 25px;
-  padding: 20px;
+  padding-top: 20px;
 }
 
-#weather-info {
+ul {
   font-size: 18px;
+  list-style: none;
 }
 
 .city-name {
   font-weight: bold;
   font-size: 50px;
-  padding-top: 20px;
 }
 .current-info {
   font-size: 25px;
