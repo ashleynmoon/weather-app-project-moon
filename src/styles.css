@@ -34,9 +34,17 @@
   opacity: 0.5;
   padding: 10px 40px;
 }
-
+.current-temperature {
+  font-size: 100px;
+}
 .current-weather {
   font-size: 120px;
+}
+
+.units {
+  position: relative;
+  font-size: 16px;
+  top: -34px;
 }
 
 .changing-message {
