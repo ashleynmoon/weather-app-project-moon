@@ -31,30 +31,28 @@
     <div class="container">
       <div class="weather-description">
         <div class="row">
-          <div class="col-5 pt-2 city-name">
+          <div class="col-6 pt-2 city-name">
             <div class="text-start" id="currentCity">Detroit, MI</div>
           </div>
-          <div class="col-7 pt-3 text-right">
-            <form class="row">
-              <div class="col-8">
+          <div class="col pt-4">
+            <form>
+              <div class="row">
                 <input
                   type="text"
-                  class="form-control form-control-lg"
+                  class="col form-control form-control-lg"
                   id="cityInput"
                   placeholder="Enter City"
                 />
-              </div>
-              <div class="col">
                 <button
                   type="submit"
-                  class="btn btn-secondary"
+                  class="col-auto btn btn-lg btn-secondary"
                   id="search-city"
                 >
                   <i class="fas fa-search"></i>
                 </button>
                 <button
                   type="submit"
-                  class="btn btn-secondary"
+                  class="col-auto btn btn-lg btn-secondary"
                   id="current-location"
                 >
                   <i class="fas fa-map-marker-alt"></i>
@@ -62,27 +60,29 @@
               </div>
             </form>
           </div>
-          <div class="current-info">
-            <div class="col text-start">
-              <span id="dateAndTime"></span>
-              <br />
-              Currently <span id="tempF">40</span>ºF (<span id="tempC">40</span
-              >ºC)
+
+          <div class="row current-info">
+            <div class="col-6 text-start">
+              <ul>
+                <li>
+                  <span id="dateAndTime"></span>
+                </li>
+                <li>Current Weather Description (Feels Like)</li>
+              </ul>
             </div>
+            <div class="col-2 text-center Precipitation">Precipitation:</div>
+            <div class="col-2 text-center Humidity">Humidity:</div>
+            <div class="col-2 text-center Wind">Wind:</div>
           </div>
 
-          <div class="col-5 text-start">
+          <div class="text-center">
             <i class="fas fa-cloud-sun-rain current-weather"></i>
+            12°F|°C
           </div>
-          <div class="col-7 text-end changing-message">
-            Be sure to bring your umbrella <i class="fas fa-umbrella"></i><br />
 
-            <ul id="weather-info">
-              <li>Precipitation:</li>
-              <li>Humidity:</li>
-              <li>Wind:</li>
-              <li>Feels Like:</li>
-            </ul>
+          <div class="text-center changing-message">
+            Be sure to bring your umbrella <i class="fas fa-umbrella"></i><br />
+            <span id="tempF">40</span>ºF (<span id="tempC">40</span>ºC)
           </div>
           <div
             class="row justify-content-evenly position-relative"
@@ -159,30 +159,6 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="justify-content-md-center">
-        <form class="row pt-4">
-          <div class="col-6">
-            <input
-              type="text"
-              class="form-control"
-              id="cityInput"
-              placeholder="Enter City"
-            />
-          </div>
-          <div class="col">
-            <button type="submit" class="btn btn-secondary" id="search-city">
-              <i class="fas fa-search"></i>
-            </button>
-            <button
-              type="submit"
-              class="btn btn-secondary"
-              id="current-location"
-            >
-              <i class="fas fa-map-marker-alt"></i>
-            </button>
-          </div>
-        </form>
       </div>
     </div>
     <script src="src/index.js"></script>

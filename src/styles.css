@@ -49,12 +49,15 @@
 
 .changing-message {
   font-size: 25px;
-  padding-top: 20px;
+  text-align: center;
+  padding: 10px;
 }
 
 ul {
   font-size: 18px;
+  margin: 0;
   list-style: none;
+  padding: 0;
 }
 
 .city-name {
@@ -62,12 +65,13 @@ ul {
   font-size: 50px;
 }
 .current-info {
-  font-size: 25px;
-  padding-bottom: 60px;
+  font-size: 18px;
+  padding: 0;
 }
 .row {
   margin-right: 0;
   margin-left: 0;
+  padding: 0;
 }
 
 .card-text {
