@@ -6,11 +6,23 @@ function searchCity(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${changeCity.value}&appid=${apiKey}`;
   currentCity.innerHTML = `${changeCity.value}`;
   console.log(apiUrl);
+  axios.get(`${apiUrl}`).then(weatherDescription);
   axios.get(`${apiUrl}&units=imperial`).then(showTemperatureF);
   axios.get(`${apiUrl}&units=metric`).then(showTemperatureC);
 }
 
 // weather information
+function weatherDescription(response){
+  console.log(response.data);
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  descriptionElement.innerHTML = response.data.weather[0].description; 
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed); 
+  }
+
+
 function showTemperatureF(response) {
   let temperatureF = Math.round(response.data.main.temp);
   tempF.innerHTML = `${temperatureF}`;

@@ -1,3 +1,16 @@
+ul {
+  font-size: 18px;
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+}
+
 .body {
   font-family: monospace;
 }
@@ -24,54 +37,58 @@
 
 .container {
   margin-top: 80px;
+  max-width: 900px;
 }
 
-.weather-description {
+.weather-app {
   background: #bfd4c3;
   border: 4px solid #bed3c3;
   border-radius: 30px;
   margin: 0 auto;
   opacity: 0.5;
-  padding: 10px 40px;
-}
-.current-temperature {
-  font-size: 100px;
-}
-.current-weather {
-  font-size: 120px;
-}
-
-.units {
-  position: relative;
-  font-size: 16px;
-  top: -34px;
-}
-
-.changing-message {
-  font-size: 25px;
-  text-align: center;
-  padding: 10px;
-}
-
-ul {
-  font-size: 18px;
-  margin: 0;
-  list-style: none;
-  padding: 0;
+  padding: 10px 20px;
 }
 
 .city-name {
   font-weight: bold;
   font-size: 50px;
 }
-.current-info {
-  font-size: 18px;
-  padding: 0;
-}
+
 .row {
   margin-right: 0;
   margin-left: 0;
+  margin-bottom: 0;
   padding: 0;
+}
+
+.current-info {
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.current-weather {
+  font-size: 100px;
+  margin-right: 10px;
+  padding-top: 40px;
+}
+
+.current-temperature {
+  font-size: 100px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.units {
+  position: relative;
+  font-size: 20px;
+  top: -60px;
+}
+
+.changing-message {
+  font-size: 25px;
+  text-align: center;
+  padding: 30px;
 }
 
 .card-text {
@@ -80,13 +97,7 @@ ul {
 }
 
 .weather-icons {
-  font-size: 40px;
-}
-
-.city-search {
-  color: #f5f7f2;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 60px;
 }
 
 #open-source-link {

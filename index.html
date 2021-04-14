@@ -29,7 +29,7 @@
     ></video>
 
     <div class="container">
-      <div class="weather-description">
+      <div class="weather-app">
         <div class="row">
           <div class="col-6 pt-2 city-name">
             <div class="text-start" id="currentCity">Detroit, MI</div>
@@ -39,20 +39,20 @@
               <div class="row">
                 <input
                   type="text"
-                  class="col form-control form-control-lg"
+                  class="col form-control form-control"
                   id="cityInput"
                   placeholder="Enter City"
                 />
                 <button
                   type="submit"
-                  class="col-auto btn btn-lg btn-secondary"
+                  class="col-auto btn btn btn-outline-dark"
                   id="search-city"
                 >
                   <i class="fas fa-search"></i>
                 </button>
                 <button
                   type="submit"
-                  class="col-auto btn btn-lg btn-secondary"
+                  class="col-auto btn btn btn-outline-dark"
                   id="current-location"
                 >
                   <i class="fas fa-map-marker-alt"></i>
@@ -64,20 +64,36 @@
           <div class="row current-info">
             <div class="col-6 text-start">
               <ul>
+                <li id="dateAndTime"></li>
+                <li id="description"></li>
                 <li>
-                  <span id="dateAndTime"></span>
+                  <i class="fas fa-thermometer-half" id=""></i> Feels Like:
+                  <span id="feels"></span>
                 </li>
-                <li>Current Weather Description (Feels Like)</li>
               </ul>
             </div>
-            <div class="col-2 text-center Precipitation">Precipitation:</div>
-            <div class="col-2 text-center Humidity">Humidity:</div>
-            <div class="col-2 text-center Wind">Wind:</div>
+            <div class="col-6 text-end">
+              <ul>
+                <li class="Precipitation">
+                  <i class="fas fa-cloud-showers-heavy"></i> Precipitation:
+                </li>
+                <li>
+                  <i class="fas fa-burn"></i>
+                  Humidity: <span id="humidity"></span>%
+                </li>
+                <li>
+                  <i class="fas fa-wind"></i> Wind: <span id="wind"></span> Km/H
+                </li>
+              </ul>
+            </div>
           </div>
 
-          <div class="text-center">
-            <i class="fas fa-cloud-sun-rain current-weather"></i>
-            12°F|°C
+          <div class="row clearfix">
+            <div class="text-center">
+              <i class="fas fa-cloud-sun-rain current-weather"></i>
+              <strong class="current-temperature">12</strong
+              ><span class="units"> °F | °C </span>
+            </div>
           </div>
 
           <div class="text-center changing-message">
