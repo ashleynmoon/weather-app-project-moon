@@ -68,7 +68,7 @@ li {
   padding: 0;
 }
 
-.current-temperature {
+#temperature {
   font-size: 100px;
   font-weight: 400;
   line-height: 1;
@@ -78,6 +78,16 @@ li {
   position: relative;
   font-size: 20px;
   top: -60px;
+}
+
+.units .active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+
+.units .active:hover {
+  text-decoration: none;
 }
 
 .changing-message {
@@ -93,6 +103,10 @@ li {
 
 .weather-icons {
   font-size: 60px;
+}
+
+#cityInput {
+  text-transform: capitalize;
 }
 
 #current-icon {

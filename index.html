@@ -32,7 +32,7 @@
       <div class="weather-app">
         <div class="row">
           <div class="col-6 pt-2 city-name">
-            <div class="text-start" id="currentCity">Detroit, MI</div>
+            <div class="text-start" id="currentCity">Detroit</div>
           </div>
           <div class="col pt-4">
             <form>
@@ -41,6 +41,7 @@
                   type="text"
                   class="col form-control form-control"
                   id="cityInput"
+                  autocomplete="off"
                   placeholder="Enter City"
                 />
                 <button
@@ -91,8 +92,11 @@
           <div class="row">
             <div class="clearfix text-center">
               <img src="" alt="" id="current-icon" />
-              <strong class="current-temperature">12</strong
-              ><span class="units"> °F | °C </span>
+              <strong id="temperature">12</strong
+              ><span class="units"
+                ><a href="#" id="fahrenheit-link" class="active">°F</a> |
+                <a href="#" id="celsius-link">°C </a></span
+              >
             </div>
           </div>
 
