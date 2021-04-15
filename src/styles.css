@@ -37,6 +37,7 @@ li {
 
 .container {
   margin-top: 80px;
+  min-width: 600px;
   max-width: 900px;
 }
 
@@ -67,12 +68,6 @@ li {
   padding: 0;
 }
 
-.current-weather {
-  font-size: 100px;
-  margin-right: 10px;
-  padding-top: 40px;
-}
-
 .current-temperature {
   font-size: 100px;
   font-weight: 400;
@@ -98,6 +93,13 @@ li {
 
 .weather-icons {
   font-size: 60px;
+}
+
+#current-icon {
+  height: 120px;
+  width: 120px;
+  line-height: 1;
+  vertical-align: top;
 }
 
 #open-source-link {
