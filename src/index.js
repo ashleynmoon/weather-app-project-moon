@@ -15,6 +15,9 @@ function weatherDescription(response){
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let iconElement = document.querySelector("#current-icon");
+
+  displayForecast();
+
   fahrenheitTemperature = response.data.main.temp;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
   descriptionElement.innerHTML = response.data.weather[0].description; 
@@ -73,6 +76,34 @@ function yourLocation(event) {
 
 let currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", yourLocation);
+
+//forecast
+function displayForecast(){
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat"];
+
+  let forecastHTML = `<div class="row justify-content-evenly position-relative">`
+    days.forEach(function(day){
+    forecastHTML = forecastHTML + 
+              `<div class="col-lg mb-4">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="card-text">
+                      <i class="fas fa-cloud-sun weather-icons"></i>
+                      <br /><br />
+                      ${day}
+                      <br />
+                      <strong>37º</strong> / 16º
+                    </p>
+                  </div>
+                </div>
+              </div>`
+  })
+
+  forecastHTML = forecastHTML + `</div>`
+  forecastElement.innerHTML = forecastHTML;
+              
+}
 
 // Time & Date
 let cityUpdate = document.querySelector("#search-city");
