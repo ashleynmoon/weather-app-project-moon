@@ -15,9 +15,7 @@ function weatherDescription(response){
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let iconElement = document.querySelector("#current-icon");
-
-  displayForecast();
-
+  
   fahrenheitTemperature = response.data.main.temp;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
   descriptionElement.innerHTML = response.data.weather[0].description; 
@@ -25,6 +23,8 @@ function weatherDescription(response){
   windElement.innerHTML = Math.round(response.data.wind.speed); 
   iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)  
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+getForecast(response.data.coord);
 }
 
 //Temperature Functions
@@ -78,7 +78,13 @@ let currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", yourLocation);
 
 //forecast
-function displayForecast(){
+function getForecast(coordinates){
+  let apiKeyForecast = "8d4d6dc5d5fb8a2637bc62c866428e4a"
+  let apiURLForecast = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKeyForecast}&units=imperial`;
+  axios.get(apiURLForecast).then(displayForecast);
+}
+
+function displayForecast(response){
   let forecastElement = document.querySelector("#forecast");
   let days = ["Thu", "Fri", "Sat"];
 
@@ -101,8 +107,7 @@ function displayForecast(){
   })
 
   forecastHTML = forecastHTML + `</div>`
-  forecastElement.innerHTML = forecastHTML;
-              
+  forecastElement.innerHTML = forecastHTML;      
 }
 
 // Time & Date
