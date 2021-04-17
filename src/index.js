@@ -10,12 +10,14 @@ function searchCity(event) {
 
 // weather information
 function weatherDescription(response){
+  console.log(response.data)
   let temperatureElement = document.querySelector("#temperature");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let iconElement = document.querySelector("#current-icon");
-  
+  let dataElement = document.querySelector("#dateAndTime");
+
   fahrenheitTemperature = response.data.main.temp;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
   descriptionElement.innerHTML = response.data.weather[0].description; 
@@ -23,8 +25,8 @@ function weatherDescription(response){
   windElement.innerHTML = Math.round(response.data.wind.speed); 
   iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)  
   iconElement.setAttribute("alt", response.data.weather[0].description);
-
-getForecast(response.data.coord);
+  dataElement.innerHTML = formatDate(response.data.dt * 1000);
+  getForecast(response.data.coord);
 }
 
 //Temperature Functions
@@ -84,16 +86,17 @@ function getForecast(coordinates){
   axios.get(apiURLForecast).then(displayForecast);
 }
 
-//function formatDay(timestamp){
-  //let date = new Data(timestamp * 1000);
-  //let day = date.getDay();
-  //let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+function formatDay(timestamp){
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-  //return days[day];
-//}
+  return days[day];
+}
 
 function displayForecast(response){
   let forecast = response.data.daily;
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row justify-content-evenly position-relative">`
     forecast.forEach(function(forecastDay, index){
@@ -108,7 +111,7 @@ function displayForecast(response){
                       alt="${forecastDay.weather[0].description}"
                       class="weather-icons"/>
                       <br /><br />
-                      ${forecastDay.dt}
+                      ${formatDay(forecastDay.dt)}
                       <br />
                       <strong>${Math.round(forecastDay.temp.max)}º</strong> / ${Math.round(forecastDay.temp.min)}º
                     </p>
@@ -126,7 +129,8 @@ let cityUpdate = document.querySelector("#search-city");
 cityUpdate.addEventListener("click", searchCity);
 
 //Current Time
-let now = new Date();
+function formatDate(timestamp){
+let now = new Date(timestamp);
 let date = now.getDate();
 let year = now.getFullYear();
 let days = [
@@ -155,8 +159,17 @@ let months = [
 ];
 let month = months[now.getMonth()];
 let hour = now.getHours();
-let minute = now.getMinutes();
-let currently = `${day}, ${month} ${date}, ${year} (${hour}:${minute})`;
+if (hour > 10){
+hour =`${hour}`-12;
+}
+
+let minutes = now.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
+
+let currently = `${day}, ${month} ${date}, ${year} (${hour}:${minutes})`;
 console.log(currently);
-let newCurrently = document.querySelector("#dateAndTime");
-newCurrently.innerHTML = `${currently}`;
+return `${currently}`;
+
+}
