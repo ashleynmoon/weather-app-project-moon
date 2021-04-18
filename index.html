@@ -18,21 +18,12 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
-    <video
-      id="background"
-      poster="images/rain.png"
-      autoplay
-      muted
-      loop
-      src="media/rain.mp4"
-      type="video/mp4"
-    ></video>
-
+    <img id="background" src="images/brokenClouds.jpg" alt="" />
     <div class="container">
       <div class="weather-app">
         <div class="row">
           <div class="col-6 pt-2 city-name">
-            <div class="text-start" id="currentCity">Detroit</div>
+            <div class="text-start" id="currentCity"></div>
           </div>
           <div class="col pt-4">
             <form>
@@ -77,6 +68,7 @@
               <ul>
                 <li class="Precipitation">
                   <i class="fas fa-cloud-showers-heavy"></i> Precipitation:
+                  <span id="precipitation"></span>%
                 </li>
                 <li>
                   <i class="fas fa-burn"></i>
