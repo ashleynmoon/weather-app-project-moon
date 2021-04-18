@@ -167,6 +167,10 @@ let months = [
 ];
 let month = months[now.getMonth()];
 let hour = now.getHours();
+let daytime = "AM"
+if (hour > 12){
+  daytime = "PM";
+}
 if (hour > 12){
 hour =`${hour}`-12;
 }
@@ -174,11 +178,6 @@ hour =`${hour}`-12;
 let minutes = now.getMinutes();
 if (minutes < 10) {
   minutes = `0${minutes}`;
-}
-
-let daytime = "AM"
-if (hour > 11){
-  daytime = "PM";
 }
 
 let currently = `${day}, ${month} ${date} ~ ${hour}:${minutes} ${daytime}`;
