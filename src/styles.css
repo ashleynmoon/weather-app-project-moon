@@ -11,6 +11,10 @@ li {
   text-transform: capitalize;
 }
 
+p {
+  padding-bottom: 40px;
+}
+
 .body {
   font-family: monospace;
 }
