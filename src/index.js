@@ -1,22 +1,27 @@
 // Search button - Changing Cities
+function search(city){
+  let apiKey = "8d4d6dc5d5fb8a2637bc62c866428e4a";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+  axios.get(`${apiUrl}&units=imperial`).then(weatherDescription);
+}
+
 function searchCity(event) {
   event.preventDefault();
   let changeCity = document.querySelector("#cityInput");
-  let apiKey = "8d4d6dc5d5fb8a2637bc62c866428e4a";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${changeCity.value}&appid=${apiKey}`;
   currentCity.innerHTML = `${changeCity.value}`;
-  axios.get(`${apiUrl}&units=imperial`).then(weatherDescription);
+  search(changeCity.value);
   }
 
 // weather information
 function weatherDescription(response){
-  console.log(response.data)
+  console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let iconElement = document.querySelector("#current-icon");
   let dataElement = document.querySelector("#dateAndTime");
+  let feelsElement = document.querySelector("#feels");
 
   fahrenheitTemperature = response.data.main.temp;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
@@ -26,6 +31,7 @@ function weatherDescription(response){
   iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)  
   iconElement.setAttribute("alt", response.data.weather[0].description);
   dataElement.innerHTML = formatDate(response.data.dt * 1000);
+  feelsElement.innerHTML = Math.round(response.data.main.feels_like);
   getForecast(response.data.coord);
 }
 
@@ -79,6 +85,7 @@ function yourLocation(event) {
 let currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", yourLocation);
 
+
 //forecast
 function getForecast(coordinates){
   let apiKeyForecast = "8d4d6dc5d5fb8a2637bc62c866428e4a"
@@ -109,7 +116,7 @@ function displayForecast(response){
                       <img 
                       src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
                       alt="${forecastDay.weather[0].description}"
-                      class="weather-icons"/>
+                      />
                       <br /><br />
                       ${formatDay(forecastDay.dt)}
                       <br />
@@ -168,8 +175,15 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 
-let currently = `${day}, ${month} ${date}, ${year} (${hour}:${minutes})`;
+let daytime = "AM"
+if (hour > 10){
+  daytime = "PM";
+}
+
+let currently = `${day}, ${month} ${date}, ${year} (${hour}:${minutes}${daytime})`;
 console.log(currently);
 return `${currently}`;
 
 }
+
+search("Detroit");

@@ -101,10 +101,6 @@ li {
   text-align: center;
 }
 
-.weather-icons {
-  font-size: 60px;
-}
-
 #cityInput {
   text-transform: capitalize;
 }
