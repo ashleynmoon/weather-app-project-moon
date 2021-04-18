@@ -119,7 +119,7 @@ function displayForecast(response){
                       src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
                       alt="${forecastDay.weather[0].description}"
                       />
-                      <br /><br />
+                      <br />
                       ${formatDay(forecastDay.dt)}
                       <br />
                       <strong>${Math.round(forecastDay.temp.max)}º</strong> / ${Math.round(forecastDay.temp.min)}º
@@ -167,7 +167,7 @@ let months = [
 ];
 let month = months[now.getMonth()];
 let hour = now.getHours();
-if (hour > 10){
+if (hour > 12){
 hour =`${hour}`-12;
 }
 
@@ -177,7 +177,7 @@ if (minutes < 10) {
 }
 
 let daytime = "AM"
-if (hour > 10){
+if (hour > 11){
   daytime = "PM";
 }
 
