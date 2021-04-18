@@ -22,6 +22,7 @@ function weatherDescription(response){
   let iconElement = document.querySelector("#current-icon");
   let dataElement = document.querySelector("#dateAndTime");
   let feelsElement = document.querySelector("#feels");
+  let backgroundImage = document.querySelector("#background");
 
   fahrenheitTemperature = response.data.main.temp;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
@@ -32,6 +33,8 @@ function weatherDescription(response){
   iconElement.setAttribute("alt", response.data.weather[0].description);
   dataElement.innerHTML = formatDate(response.data.dt * 1000);
   feelsElement.innerHTML = Math.round(response.data.main.feels_like);
+  backgroundImage.setAttribute("src",`images/${response.data.weather[0].icon}.jpg`)
+  backgroundImage.setAttribute("alt", response.data.weather[0].description);
   getForecast(response.data.coord);
 }
 

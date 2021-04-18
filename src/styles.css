@@ -12,6 +12,7 @@ li {
 }
 
 p {
+  text-align: center;
   padding-bottom: 40px;
 }
 
@@ -72,6 +73,10 @@ p {
   padding: 0;
 }
 
+.current-weather {
+  padding-top: 20px;
+}
+
 #temperature {
   font-size: 96px;
   font-weight: 400;
@@ -94,12 +99,6 @@ p {
   text-decoration: none;
 }
 
-.changing-message {
-  font-size: 25px;
-  text-align: center;
-  padding: 30px;
-}
-
 .card-text {
   font-weight: bold;
   text-align: center;
@@ -114,6 +113,10 @@ p {
   width: 120px;
   line-height: 1;
   vertical-align: top;
+}
+
+#forecast {
+  padding-top: 30px;
 }
 
 #open-source-link {
