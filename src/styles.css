@@ -124,8 +124,9 @@ li {
   color: #f5f7f2;
   font-size: 14px;
   font-weight: bold;
-  margin: 20px;
+  margin: 0 auto;
   text-align: center;
+  padding-top: 20px;
   padding-bottom: 100px;
 }
 
