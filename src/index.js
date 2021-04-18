@@ -138,7 +138,6 @@ cityUpdate.addEventListener("click", searchCity);
 function formatDate(timestamp){
 let now = new Date(timestamp);
 let date = now.getDate();
-let year = now.getFullYear();
 let days = [
   "Sunday",
   "Monday",
@@ -179,7 +178,7 @@ if (hour > 10){
   daytime = "PM";
 }
 
-let currently = `${day}, ${month} ${date}, ${year} (${hour}:${minutes}${daytime})`;
+let currently = `${day}, ${month} ${date} ~ ${hour}:${minutes} ${daytime}`;
 console.log(currently);
 return `${currently}`;
 
