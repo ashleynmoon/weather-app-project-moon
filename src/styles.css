@@ -14,8 +14,6 @@ li {
 
 .body {
   font-family: monospace;
-  min-width: 600px;
-  max-width: 900px;
 }
 
 #background {
@@ -130,6 +128,7 @@ li {
   text-align: center;
   padding-top: 20px;
   padding-bottom: 100px;
+  min-width: 600px;
 }
 
 #code-link {
